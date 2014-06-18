@@ -51,16 +51,17 @@
 
 <p>The workhorse of the app is a simple ggplot:</p>
 
-<pre><code class="r">p &lt;- ggplot(airquality, aes_string(x = input$vIn, y = input$vOut))
-p &lt;- p + geom_point() + geom_smooth(method = lm)
-p &lt;- p + labs(title = title())
+<pre><code class="r">library(ggplot2)
+p &lt;- ggplot(airquality, aes(x = Month, y = Ozone))
+p &lt;- p + geom_point()
+p &lt;- p + geom_smooth(method = lm)
+p &lt;- p + labs(title = &quot;Scatterplot of Ozone by Month with linear fit&quot;)
 p &lt;- p + theme(plot.title = element_text(lineheight = 3, face = &quot;bold&quot;, color = &quot;black&quot;, 
     size = 20))
 p &lt;- p + theme(axis.title.x = element_text(lineheight = 1.5, face = &quot;bold&quot;, 
     color = &quot;black&quot;, size = 14))
 p &lt;- p + theme(axis.title.y = element_text(lineheight = 1.5, face = &quot;bold&quot;, 
     color = &quot;black&quot;, size = 14))
-
 </code></pre>
 
   </article>
@@ -72,7 +73,10 @@ p &lt;- p + theme(axis.title.y = element_text(lineheight = 1.5, face = &quot;bol
     <h2>Graphical Linear Regression</h2>
   </hgroup>
   <article data-timings="">
-    <p><img src="assets/fig/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+    <pre><code class="r">p
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->

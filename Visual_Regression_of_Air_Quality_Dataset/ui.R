@@ -22,7 +22,8 @@ shinyUI(pageWithSidebar(
       tags$li(tags$b('Wind:'), ' Average wind speed in miles per hour at 0700 and 1000 hours at LaGuardia Airport'),
       tags$li(tags$b('Temp:'), ' Maximum daily temperature in degrees Fahrenheit at La Guardia Airport.')
     
-    )
+    ),
+    p('Note: if the output grays out, change your selection twice and it should work properly.')
   ),
   mainPanel(
     #plotOutput('myPlot'),

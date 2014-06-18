@@ -19,16 +19,17 @@ The workhorse of the app is a simple ggplot:
 
 
 ```r
-p <- ggplot(airquality, aes_string(x = input$vIn, y = input$vOut))
-p <- p + geom_point() + geom_smooth(method = lm)
-p <- p + labs(title = title())
+library(ggplot2)
+p <- ggplot(airquality, aes(x = Month, y = Ozone))
+p <- p + geom_point()
+p <- p + geom_smooth(method = lm)
+p <- p + labs(title = "Scatterplot of Ozone by Month with linear fit")
 p <- p + theme(plot.title = element_text(lineheight = 3, face = "bold", color = "black", 
     size = 20))
 p <- p + theme(axis.title.x = element_text(lineheight = 1.5, face = "bold", 
     color = "black", size = 14))
 p <- p + theme(axis.title.y = element_text(lineheight = 1.5, face = "bold", 
     color = "black", size = 14))
-
 ```
 
 
@@ -37,6 +38,11 @@ p <- p + theme(axis.title.y = element_text(lineheight = 1.5, face = "bold",
 ## Graphical Linear Regression
 
 
+
+
+```r
+p
+```
 
 <img src="assets/fig/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
 

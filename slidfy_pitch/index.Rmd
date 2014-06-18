@@ -17,13 +17,15 @@ The simple app produced by this project allows users to gain intuitive understan
 
 The workhorse of the app is a simple ggplot:
 
-```{r, eval = FALSE}
-p <- ggplot(airquality, aes_string(x=input$vIn, y=input$vOut)) 
-     p <- p + geom_point() + geom_smooth(method=lm)
-     p <- p + labs(title = title())
+```{r}
+library(ggplot2)
+p <- ggplot(airquality, aes(x=Month, y=Ozone)) 
+     p <- p + geom_point() 
+     p <- p + geom_smooth(method=lm)
+     p <- p + labs(title = "Scatterplot of Ozone by Month with linear fit")
      p <- p + theme(plot.title = element_text(lineheight=3, face="bold", color="black", size=20))
      p <- p + theme(axis.title.x= element_text(lineheight=1.5, face="bold", color="black", size = 14))
-     p <- p + theme(axis.title.y= element_text(lineheight=1.5, face="bold", color="black", size = 14))    
+     p <- p + theme(axis.title.y= element_text(lineheight=1.5, face="bold", color="black", size = 14))  
 
 ```
 
@@ -33,16 +35,10 @@ p <- ggplot(airquality, aes_string(x=input$vIn, y=input$vOut))
 ```{r, echo = FALSE}
 library(ggplot2)
 data <- airquality
-     p <- ggplot(airquality, aes(x=Month, y=Ozone)) 
-     p <- p + geom_point() 
-     p <- p + geom_smooth(method=lm)
-     p <- p + labs(title = "Scatterplot of Ozone by Month with linear fit")
-     p <- p + theme(plot.title = element_text(lineheight=3, face="bold", color="black", size=20))
-     p <- p + theme(axis.title.x= element_text(lineheight=1.5, face="bold", color="black", size = 14))
-     p <- p + theme(axis.title.y= element_text(lineheight=1.5, face="bold", color="black", size = 14))
+     
 ```
 
-```{r, warning = FALSE, fig.width =12, echo=FALSE, fig.align='center'}
+```{r, warning = FALSE, fig.width =12, fig.align='center', fig.height=6}
 p
 ```
 

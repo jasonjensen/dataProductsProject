@@ -38,7 +38,7 @@ p <- p + theme(axis.title.y = element_text(lineheight = 1.5, face = "bold",
 
 
 
-<img src="figure/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+<img src="assets/fig/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
 
 
 --- .class #id 
@@ -78,18 +78,5 @@ The current build is not completely free of bugs. At least one is known.
 <p>In general, changing the selection twice remedies this problem. THe user can obtain the output for the original desired combination this way.</p>
 </div>
 
---- .class #id 
-
-## Conclusion
-
-This is a simple app of some, but limited, utility. However, as a learning tool for how to combine parts into a ShinyApp and deploy it, it has served it's purpose.
-
 ### App Link
 https://jasonjensen.shinyapps.io/Visual_Regression_of_Air_Quality_Dataset/
-
-
-### Contact
-@jason_jensen
-
-www.jasonjensen.info
-

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visual regression of Air Quality Dataset</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Visual regression of Air Quality Dataset">
+  <meta name="author" content="Jason O. Jensen">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/myStyle.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Visual regression of Air Quality Dataset</h1>
+    <h2>Developing Data Products Course Project</h2>
+    <p>Jason O. Jensen<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="current" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>A Pedagogical Tool</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The simple app produced by this project allows users to gain intuitive understanding of simple linear regression by showing the link between a scatterplot of two variables and the fitted line.</p>
+
+<p>The workhorse of the app is a simple ggplot:</p>
+
+<pre><code class="r">p &lt;- ggplot(airquality, aes_string(x = input$vIn, y = input$vOut))
+p &lt;- p + geom_point() + geom_smooth(method = lm)
+p &lt;- p + labs(title = title())
+p &lt;- p + theme(plot.title = element_text(lineheight = 3, face = &quot;bold&quot;, color = &quot;black&quot;, 
+    size = 20))
+p &lt;- p + theme(axis.title.x = element_text(lineheight = 1.5, face = &quot;bold&quot;, 
+    color = &quot;black&quot;, size = 14))
+p &lt;- p + theme(axis.title.y = element_text(lineheight = 1.5, face = &quot;bold&quot;, 
+    color = &quot;black&quot;, size = 14))
+
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Graphical Linear Regression</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="figure/unnamed-chunk-3.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Options</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Users can choose any combination of the six available variables:</p>
+
+<ul>
+<li>Ozone</li>
+<li>Solar.R</li>
+<li>Wind</li>
+<li>Temp</li>
+<li>Month</li>
+<li>Day</li>
+</ul>
+
+<p>The App then displays a scatterplot with a fitted Least-Squares line, and the formula for the fitted line.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class=".class" id="id" style="background:;">
+  <hgroup>
+    <h2>Current Issues</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The current build is not completely free of bugs. At least one is known.</p>
+
+<p><br /></p>
+
+<div style='float:left;width:48%'>
+
+<h3>Bug</h3>
+
+<p>Some selections will not result in a graph being produced. Instead the outputs (graph and regression equation), will gray out.</p>
+</div>
+
+<div style='float:right;width:48%'>
+ 
+<h3>Workaround</h3>
+
+<p>In general, changing the selection twice remedies this problem. THe user can obtain the output for the original desired combination this way.</p>
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is a simple app of some, but limited, utility. However, as a learning tool for how to combine parts into a ShinyApp and deploy it, it has served it&#39;s purpose.</p>
+
+<h3>App Link</h3>
+
+<p><a href="https://jasonjensen.shinyapps.io/Visual_Regression_of_Air_Quality_Dataset/">https://jasonjensen.shinyapps.io/Visual_Regression_of_Air_Quality_Dataset/</a></p>
+
+<h3>Contact</h3>
+
+<p>@jason_jensen</p>
+
+<p><a href="http://www.jasonjensen.info">www.jasonjensen.info</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='A Pedagogical Tool'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Graphical Linear Regression'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Options'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Current Issues'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Conclusion'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

@@ -1,0 +1,14 @@
+.title-slide {
+  background-color: white;
+  color:darkslategray;
+}
+
+.title-slide hgroup > h1 {
+  background-color: white;
+  color:darkslategray;
+}
+
+.title-slide hgroup > h2 {
+  background-color: white;
+  color:#797979;
+}
